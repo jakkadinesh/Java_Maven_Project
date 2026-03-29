@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: taskmanager-api
+
+  profiles:
+    active: dev
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+# JWT Configuration
+app:
+  jwt:
+    secret: ${JWT_SECRET:my-super-secret-key-that-is-at-least-256-bits-long-for-hs256-signing}
+    access-token-expiration: 900000      # 15 minutes in ms
+    refresh-token-expiration: 604800000  # 7 days in ms
+
+# Springdoc / Swagger
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
