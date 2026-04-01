@@ -13,7 +13,7 @@ services:
       MYSQL_USER: ${MYSQL_USER:-taskmanager}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-taskmanager123}
     ports:
-      - "3306:3306"
+      - "3000:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
