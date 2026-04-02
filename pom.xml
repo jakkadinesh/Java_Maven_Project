@@ -148,7 +148,7 @@
     <repository>
         <id>github</id>
         <name>GitHub Packages</name>
-        <url>https://maven.pkg.github.com/jakkadinesh/taskmanager-api</url>
+        <url>https://maven.pkg.github.com/jakkadinesh/Java_Maven_Project</url>
     </repository>
 </distributionManagement>
 
