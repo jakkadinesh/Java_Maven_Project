@@ -16,6 +16,9 @@ RUN mvn clean package -DskipTests -B
 FROM eclipse-temurin:24-jre-alpine
 WORKDIR /app
 
+# Install curl for Docker healthcheck
+RUN apk add --no-cache curl
+
 # Create non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
